@@ -1,8 +1,9 @@
+import TabBar from "@/components/TabBar";
 import { Tabs } from "expo-router";
 
 const TabsRootLayout = () => {
   return (
-    <Tabs>
+    <Tabs tabBar={(props) => <TabBar {...props} />}>
       <Tabs.Screen
         name="index"
         options={{ title: "Home", headerShown: false }}
