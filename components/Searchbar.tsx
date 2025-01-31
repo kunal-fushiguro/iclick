@@ -9,9 +9,14 @@ import React, { useState } from "react";
 import { width } from "@/utils/screen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Feather from "@expo/vector-icons/Feather";
+import { themes } from "@/themes";
 
 const Searchbar = () => {
+  // inputState
   const [input, setInput] = useState("");
+
+  // Send function
+  const onPress = () => {};
 
   return (
     <View style={styles.container}>
@@ -19,7 +24,7 @@ const Searchbar = () => {
       <Ionicons
         name="search"
         size={30}
-        color={"black"}
+        color={themes.secondary}
         style={styles.searchIcon}
       />
       <TextInput
@@ -28,8 +33,9 @@ const Searchbar = () => {
         style={styles.inputBox}
         placeholder="Search"
       />
-      <TouchableOpacity style={styles.sendIcon}>
-        <Feather name="send" size={30} color={"black"} />
+      {/* send */}
+      <TouchableOpacity style={styles.sendIcon} onPress={onPress}>
+        <Feather name="send" size={30} color={themes.primary} />
       </TouchableOpacity>
     </View>
   );
@@ -38,13 +44,13 @@ const Searchbar = () => {
 const styles = StyleSheet.create({
   container: {
     width: width,
-    height: 70,
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
     paddingHorizontal: 10,
     position: "relative",
+    marginTop: 20,
   },
   inputBox: {
     width: "87%",
@@ -55,8 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "bold",
     paddingRight: 10,
-    borderColor: "black",
-    borderWidth: 3,
+    backgroundColor: themes.btnBg,
   },
   searchIcon: {
     position: "absolute",
