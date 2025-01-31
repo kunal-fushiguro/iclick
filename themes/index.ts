@@ -4,4 +4,5 @@ export const themes = {
   textSecondary: "#606060",
   primary: "#5151C6",
   secondary: "#888BF4",
+  icons: "#BDBDBD",
 };
