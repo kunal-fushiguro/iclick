@@ -18,7 +18,7 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
       return (
         <Foundation
           name="home"
-          size={35}
+          size={37}
           color={isFocused ? themes.primary : themes.icons}
         />
       );
@@ -27,7 +27,7 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
       return (
         <MaterialIcons
           name="category"
-          size={35}
+          size={37}
           color={isFocused ? themes.primary : themes.icons}
         />
       );
@@ -36,7 +36,7 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
       return (
         <AntDesign
           name="pluscircle"
-          size={35}
+          size={37}
           color={isFocused ? themes.primary : themes.icons}
         />
       );
@@ -44,14 +44,14 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
     NotificationScreen: (isFocused: boolean) => (
       <Ionicons
         name="notifications"
-        size={35}
+        size={37}
         color={isFocused ? themes.primary : themes.icons}
       />
     ),
     ProfileScreen: (isFocused: boolean) => (
       <FontAwesome5
         name="user-alt"
-        size={35}
+        size={37}
         color={isFocused ? themes.primary : themes.icons}
       />
     ),
@@ -85,6 +85,7 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
             target: route.key,
           });
         };
+        // tab-bar
         return (
           <TouchableOpacity
             key={route.name}
@@ -96,6 +97,7 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
             onPress={onPress}
             onLongPress={onLongPress}
           >
+            {/* tabr icons */}
             {icons[route.name](isFocused)}
           </TouchableOpacity>
         );
@@ -107,7 +109,7 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
 const styles = StyleSheet.create({
   tabbar: {
     position: "absolute",
-    height: 60,
+    height: 70,
     width: width,
     bottom: 0,
     flexDirection: "row",
