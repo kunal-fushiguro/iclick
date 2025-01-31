@@ -1,12 +1,22 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
 const NotFoundScreen = () => {
   return (
-    <View>
-      <Text>NotFoundScreen</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}> Not Found </Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: "auto",
+  },
+  text: {
+    fontWeight: "bold",
+    fontSize: 30,
+  },
+});
 
 export default NotFoundScreen;
