@@ -1,0 +1,94 @@
+[
+  {
+    "id": 0,
+    "userName": "JohnDoe",
+    "avatarUrl": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "likes": 120,
+    "comment": [
+      {
+        "userName": "JaneSmith",
+        "avatarUrl": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "comment": "Great post!",
+        "time": "2 hours ago"
+      },
+      {
+        "userName": "MikeJohnson",
+        "avatarUrl": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "comment": "Really informative!",
+        "time": "1 day ago"
+      }
+    ],
+    "type": "trending",
+    "views": 3400,
+    "description": "An in-depth look at modern web development trends.",
+    "title": "Web Development Trends in 2025",
+    "postUrl": "https://images.pexels.com/photos/363905/pexels-photo-363905.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "timeOfPost": "3 days ago"
+  },
+  {
+    "id": 1,
+    "userName": "AliceBrown",
+    "avatarUrl": "https://images.pexels.com/photos/835912/pexels-photo-835912.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "likes": 250,
+    "comment": [
+      {
+        "userName": "ChrisEvans",
+        "avatarUrl": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "comment": "Very well explained!",
+        "time": "3 hours ago"
+      }
+    ],
+    "type": "popular",
+    "views": 5000,
+    "description": "The best JavaScript frameworks for beginners.",
+    "title": "Top JavaScript Frameworks for 2025",
+    "postUrl": "https://images.pexels.com/photos/623305/pexels-photo-623305.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "timeOfPost": "5 days ago"
+  },
+  {
+    "id": 2,
+    "userName": "DanielClark",
+    "avatarUrl": "https://images.pexels.com/photos/3762775/pexels-photo-3762775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "likes": 98,
+    "comment": [
+      {
+        "userName": "SophieTurner",
+        "avatarUrl": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "comment": "Loved this guide!",
+        "time": "5 hours ago"
+      },
+      {
+        "userName": "RobertDowney",
+        "avatarUrl": "https://images.pexels.com/photos/363905/pexels-photo-363905.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "comment": "Very useful info!",
+        "time": "1 day ago"
+      }
+    ],
+    "type": "trending",
+    "views": 2700,
+    "description": "How to get started with full-stack development.",
+    "title": "Beginner’s Guide to Full-Stack Development",
+    "postUrl": "https://images.pexels.com/photos/3265546/pexels-photo-3265546.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "timeOfPost": "2 days ago"
+  },
+  {
+    "id": 3,
+    "userName": "EmmaWatson",
+    "avatarUrl": "https://images.pexels.com/photos/3785424/pexels-photo-3785424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "likes": 350,
+    "comment": [
+      {
+        "userName": "ChrisHemsworth",
+        "avatarUrl": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "comment": "Super helpful!",
+        "time": "10 hours ago"
+      }
+    ],
+    "type": "popular",
+    "views": 6100,
+    "description": "Best practices for writing clean and maintainable code.",
+    "title": "Writing Clean Code",
+    "postUrl": "https://images.pexels.com/photos/30410447/pexels-photo-30410447/free-photo-of-stylish-portrait-of-woman-with-unique-earrings.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "timeOfPost": "6 days ago"
+  }
+]

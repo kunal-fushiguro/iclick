@@ -35,7 +35,7 @@ const Searchbar = () => {
       />
       {/* send */}
       <TouchableOpacity style={styles.sendIcon} onPress={onPress}>
-        <Feather name="send" size={30} color={themes.primary} />
+        <Feather name="send" size={27} color={themes.primary} />
       </TouchableOpacity>
     </View>
   );
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   inputBox: {
-    width: "87%",
+    width: "80%",
     height: 50,
     color: "black",
     borderRadius: 40,
@@ -69,6 +69,9 @@ const styles = StyleSheet.create({
   },
   sendIcon: {
     marginRight: 2,
+    backgroundColor: themes.btnBg,
+    padding: 10,
+    borderRadius: 1000,
   },
 });
 

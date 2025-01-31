@@ -9,10 +9,6 @@ const TabsRootLayout = () => {
         options={{ title: "Home", headerShown: false }}
       />
       <Tabs.Screen
-        name="PostScreen"
-        options={{ title: "Post", headerShown: false }}
-      />
-      <Tabs.Screen
         name="CategoryScreen"
         options={{ title: "Category", headerShown: false }}
       />
@@ -22,8 +18,12 @@ const TabsRootLayout = () => {
       />
       <Tabs.Screen
         name="NotificationScreen"
-        options={{ title: "Notification", headerShown: false }}
+        options={{
+          title: "Notification",
+          headerShown: false,
+        }}
       />
+
       <Tabs.Screen
         name="ProfileScreen"
         options={{ title: "Profile", headerShown: false }}
