@@ -21,7 +21,7 @@ const PostCard = ({
   const addLikes = () => {};
   // onClick On Comment
   const addComment = () => {
-    router.push({ pathname: "/PostScreen", params: { id: id } });
+    router.push({ pathname: "/CommentScreen", params: { id: id } });
   };
   // show full post
   const showFull = () => {
