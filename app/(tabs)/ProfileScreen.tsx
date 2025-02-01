@@ -19,8 +19,8 @@ import { router } from "expo-router";
 const image = require("@/assets/iclick/image.png");
 
 const ProfileScreen = () => {
-  const signOut = async () => {
-    const { signOut } = useClerk();
+  const { signOut } = useClerk();
+  const signOutFn = async () => {
     await signOut();
     router.push("/LoginScreen");
   };
@@ -47,7 +47,7 @@ const ProfileScreen = () => {
           />
           <TouchableOpacity
             style={{ position: "absolute", top: 25, right: 30 }}
-            onPress={signOut}
+            onPress={signOutFn}
           >
             <AntDesign name="setting" size={30} color="white" />
           </TouchableOpacity>
@@ -121,7 +121,7 @@ const ProfileScreen = () => {
                   key={key}
                   style={[
                     styles.tab,
-                    isFocused == text ? { backgroundColor: themes.btnBg } : {},
+                    isFocused === text ? { backgroundColor: themes.btnBg } : {},
                   ]}
                   onPress={() => {
                     setisFocused(tabs[key]);
@@ -132,7 +132,7 @@ const ProfileScreen = () => {
                       styles.text,
                       {
                         color:
-                          isFocused == text ? themes.secondary : themes.icons,
+                          isFocused === text ? themes.secondary : themes.icons,
                       },
                     ]}
                   >
@@ -144,7 +144,7 @@ const ProfileScreen = () => {
           </View>
 
           {/* posts */}
-          {isFocused == tabs[0] &&
+          {isFocused === tabs[0] &&
             userdata.posts.map((item, index) => {
               return (
                 <View style={styles.postsContainer} key={index}>
@@ -157,7 +157,7 @@ const ProfileScreen = () => {
               );
             })}
           {/* collections */}
-          {isFocused == tabs[1] &&
+          {isFocused === tabs[1] &&
             userdata.collection.map((item, index) => {
               return (
                 <View style={styles.collectionBox} key={index}>

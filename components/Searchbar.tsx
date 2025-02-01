@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { width } from "@/utils/screen";
 import Ionicons from "@expo/vector-icons/Ionicons";

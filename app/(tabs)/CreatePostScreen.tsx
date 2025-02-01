@@ -4,7 +4,6 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { themes } from "@/themes";
-import { router } from "expo-router";
 import * as MediaLibrary from "expo-media-library";
 import * as ImagePicker from "expo-image-picker";
 
@@ -58,7 +57,7 @@ const CreatePostScreen = () => {
     try {
       if (ref.current != null) {
         const photo = await ref.current.takePictureAsync();
-        if (photo != undefined) {
+        if (photo !== undefined) {
           if (!permissionResponse?.granted) {
             await requestPermissionMedia();
             await MediaLibrary.saveToLibraryAsync(photo?.uri);

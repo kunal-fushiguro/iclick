@@ -7,7 +7,7 @@ import {
   Image,
   TextInput,
 } from "react-native";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { router, useLocalSearchParams } from "expo-router";
 import postData from "@/data/post.json";
 import { width } from "@/utils/screen";
@@ -20,7 +20,8 @@ import Comment from "@/components/Comment";
 
 const PostScreen = () => {
   const { id } = useLocalSearchParams<{ id: any }>();
-  const [post, setPost] = useState(postData[id | 0]);
+  // const [post, setPost] = useState(postData[id | 0]);
+  const post = postData[id | 0];
   return (
     <ScrollView>
       <View style={styles.container}>

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import Searchbar from "@/components/Searchbar";
 import TabsScreen from "@/components/TabsScreen";

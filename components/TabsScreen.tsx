@@ -27,7 +27,7 @@ const TabsScreen = () => {
               key={key}
               style={[
                 styles.tab,
-                isFocused == text ? { backgroundColor: themes.btnBg } : {},
+                isFocused === text ? { backgroundColor: themes.btnBg } : {},
               ]}
               onPress={() => {
                 setisFocused(tabs[key]);
@@ -37,7 +37,7 @@ const TabsScreen = () => {
                 style={[
                   styles.text,
                   {
-                    color: isFocused == text ? themes.secondary : themes.icons,
+                    color: isFocused === text ? themes.secondary : themes.icons,
                   },
                 ]}
               >

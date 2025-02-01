@@ -11,13 +11,14 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import postdata from "@/data/post.json";
 import { router, useLocalSearchParams } from "expo-router";
 import { themes } from "@/themes";
-import { useState } from "react";
+// import { useState } from "react";
 import Comment from "@/components/Comment";
 import { height, width } from "@/utils/screen";
 
 const CommentScreen = () => {
   const { id } = useLocalSearchParams<{ id: any }>();
-  const [comments, setComments] = useState(postdata[id].comment);
+  // const [comments, setComments] = useState(postdata[id].comment);
+  const comments = postdata[id].comment;
   return (
     <ScrollView>
       <View style={styles.conatiner}>
