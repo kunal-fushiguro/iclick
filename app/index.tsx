@@ -1,6 +1,9 @@
 import Button from "@/components/Button";
 import FourImages from "@/components/FourImages";
 import { themes } from "@/themes";
+import { useAuth } from "@clerk/clerk-expo";
+import { router } from "expo-router";
+import { useEffect } from "react";
 import { ImageBackground, StyleSheet, Text } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -8,6 +11,13 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 const image = require("@/assets/iclick/image.png");
 
 const index = () => {
+  const { isSignedIn } = useAuth();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      router.push("/(tabs)");
+    }
+  }, [isSignedIn]);
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container} edges={["left", "right"]}>

@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  FlatList,
   ScrollView,
 } from "react-native";
 import { width } from "@/utils/screen";
@@ -15,9 +14,16 @@ import Entypo from "@expo/vector-icons/Entypo";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Feather from "@expo/vector-icons/Feather";
 import { useState } from "react";
+import { useClerk } from "@clerk/clerk-react";
+import { router } from "expo-router";
 const image = require("@/assets/iclick/image.png");
 
 const ProfileScreen = () => {
+  const signOut = async () => {
+    const { signOut } = useClerk();
+    await signOut();
+    router.push("/LoginScreen");
+  };
   // tabs
   const tabs = [
     `${userdata.posts.length} Shots`,
@@ -41,7 +47,7 @@ const ProfileScreen = () => {
           />
           <TouchableOpacity
             style={{ position: "absolute", top: 25, right: 30 }}
-            onPress={() => {}}
+            onPress={signOut}
           >
             <AntDesign name="setting" size={30} color="white" />
           </TouchableOpacity>

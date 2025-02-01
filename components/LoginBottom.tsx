@@ -1,20 +1,60 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { themes } from "@/themes";
 import FourImages from "./FourImages";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router } from "expo-router";
+import { useAuth, useOAuth } from "@clerk/clerk-expo";
+import * as Linking from "expo-linking";
+import * as WebBrowser from "expo-web-browser";
+
+export const useWarmUpBrowser = () => {
+  useEffect(() => {
+    // Warm up the android browser to improve UX
+    // https://docs.expo.dev/guides/authentication/#improving-user-experience
+    void WebBrowser.warmUpAsync();
+    return () => {
+      void WebBrowser.coolDownAsync();
+    };
+  }, []);
+};
+
+WebBrowser.maybeCompleteAuthSession();
 
 const LoginBottom = () => {
+  useWarmUpBrowser();
+
+  const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
   // google auth
-  const googleAuth = () => {
-    router.replace("/(tabs)");
+  const googleAuth = async () => {
+    try {
+      const { createdSessionId, setActive } = await startOAuthFlow({
+        redirectUrl: Linking.createURL("/dashboard", { scheme: "myapp" }),
+      });
+
+      if (createdSessionId) {
+        setActive!({ session: createdSessionId });
+      } else {
+      }
+    } catch (err) {
+      console.error(JSON.stringify(err, null, 2));
+    }
   };
+
   // facebook auth
   const faceBookAuth = () => {
     router.replace("/(tabs)");
   };
+
+  const { isSignedIn } = useAuth();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      router.push("/(tabs)");
+    }
+  }, [isSignedIn]);
+
   return (
     <View style={styles.container}>
       {/* Content */}
