@@ -19,8 +19,8 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Comment from "@/components/Comment";
 
 const PostScreen = () => {
-  const { id } = useLocalSearchParams();
-  const [post, setPost] = useState(postData);
+  const { id } = useLocalSearchParams<{ id: any }>();
+  const [post, setPost] = useState(postData[id | 0]);
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -57,19 +57,19 @@ const PostScreen = () => {
             <View style={styles.smallBox}>
               <Image
                 source={{
-                  uri: post[0].avatarUrl,
+                  uri: post.avatarUrl,
                 }}
                 style={styles.avatarImage}
                 resizeMode="cover"
               />
-              <Text style={styles.text}>{post[0].userName}</Text>
+              <Text style={styles.text}>{post.userName}</Text>
             </View>
-            <Text style={styles.text}>{post[0].timeOfPost}</Text>
+            <Text style={styles.text}>{post.timeOfPost}</Text>
           </View>
           {/* Post Image */}
           <Image
             source={{
-              uri: post[0].postUrl,
+              uri: post.postUrl,
             }}
             style={styles.postImage}
             resizeMode="cover"
@@ -78,7 +78,7 @@ const PostScreen = () => {
           <View style={styles.postBottomBar}>
             {/* views */}
             <View style={styles.smallBox}>
-              <Text>{post[0].views}</Text>
+              <Text>{post.views}</Text>
               <TouchableOpacity>
                 <AntDesign name="eyeo" size={24} color={themes.primary} />
               </TouchableOpacity>
@@ -86,7 +86,7 @@ const PostScreen = () => {
 
             {/* comment button */}
             <View style={styles.smallBox}>
-              <Text>{post[0].comment.length}</Text>
+              <Text>{post.comment.length}</Text>
               <TouchableOpacity>
                 <FontAwesome6
                   name="comment-dots"
@@ -97,7 +97,7 @@ const PostScreen = () => {
             </View>
             {/* like button */}
             <View style={styles.smallBox}>
-              <Text>{post[0].likes}</Text>
+              <Text>{post.likes}</Text>
               <TouchableOpacity>
                 <AntDesign name="hearto" size={24} color={themes.primary} />
               </TouchableOpacity>
@@ -107,15 +107,15 @@ const PostScreen = () => {
         {/* Post title & description */}
         <View style={styles.postContentContainer}>
           <Text style={[styles.text, { color: "black", fontSize: 30 }]}>
-            {post[0].title}
+            {post.title}
           </Text>
           <Text style={[styles.text, { color: themes.icons, fontSize: 20 }]}>
-            {post[0].description}
+            {post.description}
           </Text>
         </View>
         {/* comments */}
         <View style={styles.commentBox}>
-          {post[0].comment.map((item, index) => {
+          {post.comment.map((item, index) => {
             return (
               <Comment
                 key={index}

@@ -23,7 +23,6 @@ const TabsRootLayout = () => {
           headerShown: false,
         }}
       />
-
       <Tabs.Screen
         name="ProfileScreen"
         options={{ title: "Profile", headerShown: false }}

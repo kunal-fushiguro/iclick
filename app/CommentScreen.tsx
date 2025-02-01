@@ -9,14 +9,15 @@ import {
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import postdata from "@/data/post.json";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { themes } from "@/themes";
 import { useState } from "react";
 import Comment from "@/components/Comment";
 import { height, width } from "@/utils/screen";
 
 const CommentScreen = () => {
-  const [comments, setComments] = useState(postdata[0].comment);
+  const { id } = useLocalSearchParams<{ id: any }>();
+  const [comments, setComments] = useState(postdata[id].comment);
   return (
     <ScrollView>
       <View style={styles.conatiner}>
