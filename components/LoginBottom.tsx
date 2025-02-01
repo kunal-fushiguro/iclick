@@ -30,7 +30,7 @@ const LoginBottom = () => {
   const googleAuth = async () => {
     try {
       const { createdSessionId, setActive } = await startOAuthFlow({
-        redirectUrl: Linking.createURL("/dashboard", { scheme: "myapp" }),
+        redirectUrl: Linking.createURL("/(tabs)", { scheme: "myapp" }),
       });
 
       if (createdSessionId) {
@@ -43,15 +43,15 @@ const LoginBottom = () => {
   };
 
   // facebook auth
-  const faceBookAuth = () => {
-    router.replace("/(tabs)");
-  };
+  // const faceBookAuth = () => {
+  //   router.replace("/(tabs)");
+  // };
 
   const { isSignedIn } = useAuth();
 
   useEffect(() => {
     if (isSignedIn) {
-      router.push("/(tabs)");
+      router.push("/(tabs)/ProfileScreen");
     }
   }, [isSignedIn]);
 
